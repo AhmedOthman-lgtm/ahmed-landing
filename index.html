@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +14,8 @@
       font-family: 'Poppins', sans-serif;
     }
     body {
-      background-color: #0f1c1e;
-      color: white;
+      background-color: #fff;
+      color: #000;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -31,144 +32,42 @@
     p {
       margin-bottom: 2rem;
       font-size: 1.2rem;
-      color: #ccc;
     }
     p span {
       color: #c40000;
       font-weight: 500;
     }
-    .btn-container {
-      display: flex;
-      gap: 1rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .btn {
-      background-color: #c40000;
-      color: white;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      border-radius: 5px;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s;
-      text-decoration: none;
-    }
-    .btn:hover {
-      background-color: #a80000;
-    }
-    form {
-      margin-top: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      width: 100%;
-      max-width: 400px;
-    }
-    input, textarea {
-      padding: 0.75rem;
-      border-radius: 5px;
-      border: none;
-      font-size: 1rem;
-    }
-    textarea {
-      resize: vertical;
-    }
-    .clients {
-      margin-top: 4rem;
-      text-align: center;
-    }
-    .clients h2 {
-      font-size: 2rem;
-      color: #fff;
-      margin-bottom: 2rem;
-    }
     .logos {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 2rem;
-      align-items: center;
+      margin-top: 2rem;
       justify-items: center;
     }
     .logos img {
-      max-width: 100px;
-      max-height: 60px;
+      max-width: 140px;
+      max-height: 90px;
       object-fit: contain;
-      opacity: 0.9;
-      transition: opacity 0.3s;
+      transition: transform 0.3s;
     }
     .logos img:hover {
-      opacity: 1;
-    }
-    .catalog-section {
-      margin-top: 5rem;
-      text-align: center;
-    }
-    .color-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-      max-width: 800px;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .color-box {
-      height: 80px;
-      border-radius: 8px;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      padding: 0.3rem;
-      color: white;
-      font-size: 0.9rem;
-      font-weight: 500;
-      text-shadow: 0 1px 3px rgba(0,0,0,0.5);
+      transform: scale(1.05);
     }
   </style>
 </head>
 <body>
   <h1>Ahmed Othman <span>ADV</span></h1>
-  <p>Othman — <span>Your Brand</span> in Every Detail.</p>
-  <div class="btn-container">
-    <a class="btn" href="https://wa.me/201118222944" target="_blank">WhatsApp</a>
-    <a class="btn" href="#contact">Contact Form</a>
+  <p>Trusted by <span>Leading Brands</span></p>
+  <div class="logos">
+    <img src="00.png" alt="Vodafone">
+    <img src="1.png" alt="Daily Mart">
+    <img src="2.png" alt="Sika Egypt">
+    <img src="4.png" alt="BigBik">
+    <img src="6.jpg" alt="Khayal Restaurant">
+    <img src="7.jpg" alt="Bank of Egypt">
+    <img src="9.png" alt="Master Gasoline">
+    <img src="8776.png" alt="هرم الحمام">
+    <img src="9867.jpg" alt="جمعية رسالة">
   </div>
-  <form id="contact" action="https://formspree.io/f/mjkypzrg" method="POST">
-    <input type="text" name="name" placeholder="Your Name" required />
-    <input type="email" name="email" placeholder="Your Email" required />
-    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
-    <button class="btn" type="submit">Send</button>
-  </form>
-
-  <section class="clients">
-    <h2>Trusted by Leading Brands</h2>
-    <div class="logos">
-      <img src="00.png" alt="Vodafone">
-      <img src="1.png" alt="Daily Mart">
-      <img src="2.png" alt="Sika Egypt">
-      <img src="4.png" alt="BigBik">
-      <img src="6.jpg" alt="Khayal Restaurant">
-      <img src="7.jpg" alt="Bank of Egypt">
-      <img src="9.png" alt="Master Gasoline">
-      <img src="8776.png" alt="هرم الحمام">
-      <img src="9867.jpg" alt="جمعية رسالة">
-    </div>
-  </section>
-
-  <section class="catalog-section">
-    <h2>Alucobond Color Catalog</h2>
-    <div class="color-grid">
-      <div class="color-box" style="background-color:#e41c1c">Red Glossy</div>
-      <div class="color-box" style="background-color:#333">Black Matte</div>
-      <div class="color-box" style="background-color:#ffffff; color:#000">White</div>
-      <div class="color-box" style="background-color:#c0c0c0; color:#000">Silver</div>
-      <div class="color-box" style="background-color:#4b3621">Bronze</div>
-      <div class="color-box" style="background-color:#7c5c3b">Wood Finish</div>
-      <div class="color-box" style="background-color:#1e73be">Blue</div>
-      <div class="color-box" style="background-color:#3d9970">Green</div>
-    </div>
-    <a class="btn" href="Catalog BM_Bond UAE .pdf" download>Download Full Catalog (PDF)</a>
-  </section>
 </body>
 </html>
