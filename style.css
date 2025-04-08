@@ -1,0 +1,27 @@
+
+body {
+  margin: 0;
+  background: #0d2127;
+  color: white;
+  font-family: Arial, sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  flex-direction: column;
+}
+.hero {
+  text-align: center;
+}
+.red {
+  color: #b30000;
+}
+button {
+  background: #b30000;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  cursor: pointer;
+}
