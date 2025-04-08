@@ -5,13 +5,91 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ahmed Othman ADV</title>
-  <link href="style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background-color: #0f1c1e;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 2rem;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    h1 span {
+      color: #c40000;
+    }
+    p {
+      margin-bottom: 2rem;
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    p span {
+      color: #c40000;
+      font-weight: 500;
+    }
+    .btn-container {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .btn {
+      background-color: #c40000;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #a80000;
+    }
+    form {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      max-width: 400px;
+    }
+    input, textarea {
+      padding: 0.75rem;
+      border-radius: 5px;
+      border: none;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+    }
+  </style>
 </head>
 <body>
-  <section class="hero">
-    <h1>Ahmed Othman <span class="red">ADV</span></h1>
-    <p>Othman — <span class="red">Your Brand</span> in Every Detail.</p>
-    <button>Contact Me</button>
-  </section>
+  <h1>Ahmed Othman <span>ADV</span></h1>
+  <p>Othman — <span>Your Brand</span> in Every Detail.</p>
+  <div class="btn-container">
+    <a class="btn" href="https://wa.me/201118222944" target="_blank">WhatsApp</a>
+    <a class="btn" href="#contact">Contact Form</a>
+  </div>
+  <form id="contact" action="https://formspree.io/f/mjkypzrg" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required />
+    <input type="email" name="email" placeholder="Your Email" required />
+    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+    <button class="btn" type="submit">Send</button>
+  </form>
 </body>
 </html>
