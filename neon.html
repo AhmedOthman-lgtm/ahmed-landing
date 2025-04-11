@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +12,58 @@
       background-color: #0e1b1c;
       color: white;
       display: flex;
-      height: 100vh;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    header {
+      background-color: #1e1e1e;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-weight: bold;
+    }
+    .promo {
+      background: red;
+      color: #fff;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .hero {
+      position: relative;
+      height: 350px;
       overflow: hidden;
+    }
+    .hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+    }
+    .hero h1 {
+      position: relative;
+      z-index: 1;
+      color: #fff;
+      font-size: 32px;
+      text-align: center;
+      padding: 120px 20px;
+      text-shadow: 0 0 20px #000;
+    }
+    .container {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
     }
     .left, .right {
       width: 50%;
@@ -47,25 +98,47 @@
       margin-top: 10px;
     }
     .color {
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
       border-radius: 50%;
       cursor: pointer;
       border: 2px solid white;
     }
     .font {
-      padding: 6px 10px;
+      padding: 10px 16px;
       border: 1px solid white;
-      border-radius: 4px;
+      border-radius: 8px;
       cursor: pointer;
       font-size: 14px;
+    }
+    .toggle {
+      margin-top: 30px;
+    }
+    .toggle-switch {
+      display: inline-flex;
+      border-radius: 30px;
+      overflow: hidden;
+      border: 2px solid #fff;
+    }
+    .toggle-switch span {
+      padding: 6px 16px;
+      font-weight: bold;
+      cursor: pointer;
+      user-select: none;
+    }
+    .on {
+      background-color: #fff;
+      color: red;
+    }
+    .off {
+      background-color: #444;
+      color: #ccc;
     }
     .right {
       display: flex;
       align-items: center;
       justify-content: center;
-      background-color: #1a1a1a;
-      transition: filter 0.3s ease;
+      background-color: #111;
       position: relative;
     }
     .neon-text {
@@ -75,90 +148,133 @@
       color: #ff0055;
       font-family: 'Martita', cursive;
     }
-    .toggle-switch {
-      margin-top: 30px;
-      display: inline-block;
-      font-size: 0;
-    }
-    .switch {
-      display: inline-flex;
-      align-items: center;
-      background: white;
-      border-radius: 999px;
+    
+    .video-container {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       overflow: hidden;
-      border: 2px solid #fff;
+      z-index: 0;
     }
-    .switch span {
-      display: inline-block;
-      padding: 6px 14px;
-      font-size: 14px;
-      font-weight: bold;
-      cursor: pointer;
+
+    .video-container video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    .switch .on {
-      background-color: white;
-      color: red;
+
+    .neon-text {
+      position: relative;
+      z-index: 1;
     }
-    .switch .off {
-      background-color: #333;
-      color: grey;
-    }
-    .dark .right {
-      filter: brightness(0.4);
+
+@media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+      .left, .right {
+        width: 100%;
+      }
     }
   </style>
 </head>
-<body class="dark">
-  <div class="left">
-    <h2>Customize Your Neon</h2>
-    <div class="input-group">
-      <label for="neonText">Text</label>
-      <input type="text" id="neonText" placeholder="Type here..." oninput="updateText(this.value)" />
-    </div>
-    <div class="input-group">
-      <label>Color</label>
-      <div class="colors" id="colorPalette">
-        <div class="color" style="background-color: #ffffff;" onclick="updateColor('#ffffff')"></div>
-        <div class="color" style="background-color: #ff0000;" onclick="updateColor('#ff0000')"></div>
-        <div class="color" style="background-color: #00ff00;" onclick="updateColor('#00ff00')"></div>
-        <div class="color" style="background-color: #00bfff;" onclick="updateColor('#00bfff')"></div>
+<body>
+  <div class="promo">🎉 FLASHFRENZY - 20% OFF ONLINE ORDERS - USE CODE: AOAVADV</div>
+  <header>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#">DESIGN YOUR OWN SIGN</a>
+      <a href="#">GET A QUOTE</a>
+      <a href="#">SHOP</a>
+      <a href="#">BUSINESS LOGOS</a>
+      <a href="#">OUTDOOR SIGNS</a>
+    </nav>
+  </header>
+  <section class="hero">
+    <video autoplay muted loop>
+      <source src="https://assets.codepen.io/605876/neon-background.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <h1>Turn your idea into an eye-catching LED neon sign</h1>
+  </section>
+  <div class="container">
+    <div class="left">
+      <h2>Customize Your Neon</h2>
+      <div class="input-group">
+        <label for="neonText">Text</label>
+        <input type="text" id="neonText" placeholder="Type here..." oninput="updateText(this.value)" />
+      </div>
+      <div class="input-group">
+        <label>Color</label>
+        <div class="colors" id="colorPalette">
+          <div class="color" style="background-color: #ffffcc;" onclick="updateColor('#ffffcc')"></div>
+          <div class="color" style="background-color: #dddddd;" onclick="updateColor('#dddddd')"></div>
+          <div class="color" style="background-color: #ffff66;" onclick="updateColor('#ffff66')"></div>
+          <div class="color" style="background-color: #ffcc00;" onclick="updateColor('#ffcc00')"></div>
+          <div class="color" style="background-color: #ff9900;" onclick="updateColor('#ff9900')"></div>
+          <div class="color" style="background-color: #ff6666;" onclick="updateColor('#ff6666')"></div>
+          <div class="color" style="background-color: #ff0000;" onclick="updateColor('#ff0000')"></div>
+          <div class="color" style="background-color: #ff99cc;" onclick="updateColor('#ff99cc')"></div>
+          <div class="color" style="background-color: #ff3399;" onclick="updateColor('#ff3399')"></div>
+          <div class="color" style="background-color: #9932cc;" onclick="updateColor('#9932cc')"></div>
+          <div class="color" style="background-color: #0066ff;" onclick="updateColor('#0066ff')"></div>
+          <div class="color" style="background-color: #99ccff;" onclick="updateColor('#99ccff')"></div>
+          <div class="color" style="background-color: #00cccc;" onclick="updateColor('#00cccc')"></div>
+          <div class="color" style="background-color: #99ffcc;" onclick="updateColor('#99ffcc')"></div>
+          <div class="color" style="background-color: #00ff00;" onclick="updateColor('#00ff00')"></div>
+        </div>
+      </div>
+      <div class="input-group">
+        <label>Font</label>
+        <div class="fonts">
+          <div class="font" onclick="updateFont('Martita')">Martita</div>
+          <div class="font" onclick="updateFont('Blythe')">Blythe</div>
+        </div>
+      </div>
+      <div class="toggle">
+        <div class="toggle-switch">
+          <span id="onBtn" class="on" onclick="toggleNeon(true)">ON</span>
+          <span id="offBtn" class="off" onclick="toggleNeon(false)">OFF</span>
+        </div>
       </div>
     </div>
-    <div class="input-group">
-      <label>Font</label>
-      <div class="fonts">
-        <div class="font" onclick="updateFont('Martita')">Martita</div>
-        <div class="font" onclick="updateFont('Blythe')">Blythe</div>
-      </div>
-    </div>
-    <div class="toggle-switch">
-      <div class="switch" onclick="toggleDark(this)">
-        <span class="on">ON</span>
-        <span class="off">OFF</span>
-      </div>
-    </div>
-  </div>
-  <div class="right" id="previewArea">
-    <div class="neon-text" id="neonPreview">Your Text</div>
-  </div>
+    <div class="right">
+      
+<div class="video-container">
+  <video autoplay muted loop playsinline>
+    <source src="neon-background.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
 
+<div class="neon-text" id="neonPreview">Your Text</div>
+    </div>
+  </div>
   <script>
     function updateText(val) {
       document.getElementById('neonPreview').textContent = val || "Your Text";
     }
-
     function updateColor(color) {
       const neon = document.getElementById('neonPreview');
       neon.style.color = color;
       neon.style.textShadow = `0 0 5px #fff, 0 0 10px ${color}, 0 0 20px ${color}`;
     }
-
     function updateFont(font) {
       document.getElementById('neonPreview').style.fontFamily = font;
     }
-
-    function toggleDark(el) {
-      document.body.classList.toggle('dark');
+    function toggleNeon(state) {
+      const neon = document.getElementById('neonPreview');
+      if (state) {
+        neon.style.opacity = 1;
+        document.getElementById('onBtn').classList.add('on');
+        document.getElementById('offBtn').classList.remove('on');
+      } else {
+        neon.style.opacity = 0.2;
+        document.getElementById('offBtn').classList.add('on');
+        document.getElementById('onBtn').classList.remove('on');
+      }
     }
   </script>
 </body>
